@@ -37,3 +37,35 @@ class HotelTransportation:
         self.id = id
         self.hotel_id = hotel_id
         self.transportation_id = transportation_id
+
+# Functions to interact with the database
+def add_hotel(name, location, continent, price_per_night, max_stay_duration):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+    INSERT INTO hotels (name, location, continent, price_per_night, max_stay_duration)
+    VALUES (?, ?, ?, ?, ?)
+    ''', (name, location, continent, price_per_night, max_stay_duration))
+    conn.commit()
+    conn.close()
+
+def get_hotels_by_location(location):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+    SELECT * FROM hotels WHERE location = ? LIMIT 5
+    ''', (location,))
+    hotels_data = cursor.fetchall()
+    conn.close()
+    return [Hotel(*hotel) for hotel in hotels_data]
+
+def add_room(hotel_id, room_type, price, availability):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+    INSERT INTO rooms (hotel_id, room_type, price, availability)
+    VALUES (?, ?, ?, ?)
+    ''', (hotel_id, room_type, price, availability))
+    conn.commit()
+    conn.close()
+
