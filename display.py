@@ -36,3 +36,32 @@ def view_rooms(hotels_list):
     else:
         print("No rooms found for the selected hotel.")
 
+def book_hotel(hotels_list, rooms_list):
+    room_id = int(input("\nEnter the ID of the room you want to book: "))
+    duration = int(input("Enter the duration of stay (in days): "))
+    hotel_id = rooms_list[room_id-1].hotel_id
+    if duration > hotels_list[hotel_id-1].max_stay_duration:
+        print("Duration exceeds the maximum stay duration for the selected hotel.")
+        return
+    
+    transportation_list = models.get_transportation()
+    print("\nAvailable Transportation:")
+    display_transportation(transportation_list)
+    
+    transportation_id = int(input("\nEnter the ID of the transportation you want to book: "))
+    models.book_hotel(hotel_id, transportation_id)
+    print("Hotel and room booked successfully!")
+
+def main_menu():
+    while True:
+        print("\nDiscoverDwell - Hotel Hunting")
+        print("1. Search for Hotels")
+        print("2. Exit")
+        choice = input("Enter your choice: ").strip()
+        
+        if choice == '1':
+            search_hotels()
+        elif choice == '2':
+            break
+        else:
+            print("Invalid choice. Please try again.")

@@ -15,6 +15,18 @@ if they do not already exist.
 -Clears existing data in the tables before inserting the sample data.<<<
 
 
+MODELS.PY>>>
+Purpose: Defines the data models and functions to interact with the database.
+
+1. Hotel Class:
+-Represents a hotel with attributes like id, name, location, continent, 
+price_per_night, and max_stay_duration.
+-rooms- property method returns a list of Room objects associated with the hotel.
+-room_count- property method returns the number of rooms associated with the hotel.
+
+2. Room Class:
+-Represents a room with attributes like id, hotel_id, room_type, price, and availability.
+
 
 
  DISPLAY.PY>>>
