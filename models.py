@@ -31,3 +31,9 @@ class Transportation:
         self.id = id
         self.name = name
         self.description = description
+
+class HotelTransportation:
+    def __init__(self, id, hotel_id, transportation_id):
+        self.id = id
+        self.hotel_id = hotel_id
+        self.transportation_id = transportation_id

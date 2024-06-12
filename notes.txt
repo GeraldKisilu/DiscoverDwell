@@ -27,6 +27,16 @@ price_per_night, and max_stay_duration.
 2. Room Class:
 -Represents a room with attributes like id, hotel_id, room_type, price, and availability.
 
+3. Transportation Class:
+-Represents a transportation option with attributes like id, name, and description.
+
+4. HotelTransportation Class:
+-Represents the relationship between hotels and transportation options with attributes like
+id, hotel_id, and transportation_id.
+
+5. Database Interaction Functions:
+-add_hotel(), get_hotels_by_location(), add_room(), get_rooms_by_hotel(), add_transportation(),
+get_transportation(), and book_hotel() perform CRUD operations on the database.<<<
 
 
  DISPLAY.PY>>>
