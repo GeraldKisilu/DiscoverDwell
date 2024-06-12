@@ -1,0 +1,21 @@
+DATABASE.PY>>>
+Purpose: Handles the SQLite database connection, schema creation, and populating the database with sample data.
+
+1. get_db_connection():
+
+Establishes and returns a connection to the SQLite database named 
+discoverdwell.db
+.
+2. create_tables():
+
+Creates the necessary tables (hotels, rooms, transportation, hotel_transportation) in the database
+if they do not already exist.
+Defines the schema for each table, including columns and their data types.
+
+3. populate_sample_data():
+
+Populates the database with sample data for hotels, rooms, and transportation.
+Clears existing data in the tables before inserting the sample data.<<<
+
+
+MODELS.PY>>>
