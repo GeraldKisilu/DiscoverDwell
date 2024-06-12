@@ -17,6 +17,38 @@ if they do not already exist.
 
 
 
+ DISPLAY.PY>>>
+
+ Purpose: Handles the command-line interface logic.
+
+1. display_hotels():
+Displays the list of hotels with their details.
+
+2. display_rooms():
+Displays the list of rooms for a selected hotel.
+
+3. display_transportation():
+Displays the list of available transportation options.
+
+4. search_hotels():
+-Prompts the user to enter a continent and country.
+-Fetches and displays the list of hotels in the specified country.
+-Calls view_rooms() to display rooms for the selected hotel.
+
+5. view_rooms():
+-Prompts the user to enter the ID of the hotel to view rooms.
+-Fetches and displays the list of rooms for the selected hotel.
+-Calls book_hotel() to book a room and transportation.
+
+6. book_hotel():
+-Prompts the user to enter the ID of the room to book and the duration of stay.
+-Fetches and displays the list of available transportation options.
+-Books the hotel and room with the selected transportation.
+
+7. main_menu():
+-Displays the main menu with options to search for hotels or exit the application.
+-Calls search_hotels() if the user chooses to search for hotels.<<<
+
 MAIN.PY>>>
 
 Purpose: The entry point for the application.

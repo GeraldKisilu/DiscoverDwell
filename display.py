@@ -1,0 +1,38 @@
+import models
+
+def display_hotels(hotels_list):
+    for hotel in hotels_list:
+        print(f"ID: {hotel.id}, Name: {hotel.name}, Location: {hotel.location}, Continent: {hotel.continent}, Price per Night: {hotel.price_per_night}, Max Stay Duration: {hotel.max_stay_duration}, Rooms: {hotel.room_count}")
+
+def display_rooms(rooms_list):
+    for room in rooms_list:
+        print(f"ID: {room.id}, Room Type: {room.room_type}, Price: {room.price}, Availability: {room.availability}")
+
+def display_transportation(transportation_list):
+    for transport in transportation_list:
+        print(f"ID: {transport.id}, Name: {transport.name}, Description: {transport.description}")
+
+def search_hotels():
+    continent = input("Enter the continent (Europe, Africa, Asia, America, UAE): ").strip()
+    country = input("Enter the country: ").strip()
+    hotels_list = models.get_hotels_by_location(country)
+    # Debug print statements to  identify hotels
+    print(f"Debug: Found {len(hotels_list)} hotels in {country}")
+    if hotels_list:
+        print("\nAvailable Hotels:")
+        display_hotels(hotels_list)
+        view_rooms(hotels_list)
+    else:
+        print("No hotels found for the specified location.")
+
+def view_rooms(hotels_list):
+    hotel_id = int(input("\nEnter the ID of the hotel to view rooms: "))
+    rooms_list = models.get_rooms_by_hotel(hotel_id)
+    print(f"Debug: Found {len(rooms_list)} rooms in hotel ID {hotel_id}")
+    if rooms_list:
+        print("\nAvailable Rooms:")
+        display_rooms(rooms_list)
+        book_hotel(hotels_list, rooms_list)
+    else:
+        print("No rooms found for the selected hotel.")
+
