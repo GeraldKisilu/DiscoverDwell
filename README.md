@@ -38,7 +38,7 @@ The required user stories are:
 > SQLite3
 
 ## LINK
-DiscoverDwell GitHub Repository
+https://github.com/GeraldKisilu/DiscoverDwell.git
 
 ## TECHNICAL EXPECTATIONS
 > Language: Python
