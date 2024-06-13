@@ -46,12 +46,12 @@ def view_rooms(hotels_list):
     if rooms_list:
         print("\nAvailable Rooms:")
         display_rooms(rooms_list)
-        book_hotel(hotels_list, rooms_list)
+        book_selected_room(hotels_list, rooms_list)
     else:
         print("No rooms found for the selected hotel.")
 
 # Function to book a selected room in a hotel
-def book_hotel(hotels_list, rooms_list):
+def book_selected_room(hotels_list, rooms_list):
     room_id = int(input("\nEnter the ID of the room you want to book: "))
     duration = int(input("Enter the duration of stay (in days): "))
     

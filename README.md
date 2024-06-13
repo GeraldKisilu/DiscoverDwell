@@ -46,3 +46,6 @@ https://github.com/GeraldKisilu/DiscoverDwell.git
 
 ## LICENSE
 MIT License
+
+
+ python3 -m lib.debug
