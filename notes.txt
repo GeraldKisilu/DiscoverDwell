@@ -1,12 +1,12 @@
-DATABASE.PY
+HELPERS.PY
 Purpose: Handles the SQLite database connection, schema tables creation, and populating the 
 database with sample data.
 
-MODELS.PY
+__INIT__.PY
 Purpose: Defines the data models and functions to interact with the database.
 
- DISPLAY.PY
+CLI.PY
  Purpose: Handles the command-line interface logic.
 
-MAIN.PY
+DEBUG.PY
 Purpose: The entry point for the application.
