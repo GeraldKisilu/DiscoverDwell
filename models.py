@@ -69,3 +69,40 @@ def add_room(hotel_id, room_type, price, availability):
     conn.commit()
     conn.close()
 
+def get_rooms_by_hotel(hotel_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+    SELECT * FROM rooms WHERE hotel_id = ?
+    ''', (hotel_id,))
+    rooms_data = cursor.fetchall()
+    conn.close()
+    return [Room(*room) for room in rooms_data]
+
+def add_transportation(name, description):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+    INSERT INTO transportation (name, description)
+    VALUES (?, ?)
+    ''', (name, description))
+    conn.commit()
+    conn.close()
+
+def get_transportation():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM transportation')
+    transportation_data = cursor.fetchall()
+    conn.close()
+    return [Transportation(*transport) for transport in transportation_data]
+
+def book_hotel(hotel_id, transportation_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+    INSERT INTO hotel_transportation (hotel_id, transportation_id)
+    VALUES (?, ?)
+    ''', (hotel_id, transportation_id))
+    conn.commit()
+    conn.close()
