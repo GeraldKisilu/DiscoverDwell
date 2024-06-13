@@ -31,3 +31,18 @@ The required user stories are:
 2. As a traveler, I should be able to view a list of hotels with details such as names, locations, prices per night, and available transportation options, so that I can compare and select the best option for my stay.
 3. As a traveler, I should be able to select a hotel and specify my check-in and check-out dates, so that I can book accommodations for my desired travel dates.
 4. As a traveler, I should be able to choose my preferred transportation means (e.g., taxi, public transportation, rental car) for reaching the hotel, so that I can plan my travel logistics accordingly.
+
+## INSTALLATION AND SETUP
+### Prerequisites
+> Python 3.8+
+> SQLite3
+
+## LINK
+DiscoverDwell GitHub Repository
+
+## TECHNICAL EXPECTATIONS
+> Language: Python
+> Database: SQLite
+
+## LICENSE
+MIT License
