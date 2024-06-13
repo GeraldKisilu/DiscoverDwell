@@ -1,4 +1,4 @@
-from database import get_db_connection
+from lib.helpers import get_db_connection
 
 class Hotel:
     def __init__(self, id, name, location, continent, price_per_night, max_stay_duration):
