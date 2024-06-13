@@ -1,4 +1,4 @@
-import models
+from lib.models import get_hotels_by_location, get_rooms_by_hotel, get_transportation, book_hotel
 
 # Function to display a list of hotels with their details
 def display_hotels(hotels_list):
@@ -21,7 +21,7 @@ def search_hotels():
     country = input("Enter the country: ").strip()
     
     # Fetch hotels based on the country
-    hotels_list = models.get_hotels_by_location(country)
+    hotels_list = get_hotels_by_location(country)
     
     # Debug print statement to identify hotels found
     print(f"Debug: Found {len(hotels_list)} hotels in {country}")
@@ -38,7 +38,7 @@ def view_rooms(hotels_list):
     hotel_id = int(input("\nEnter the ID of the hotel to view rooms: "))
     
     # Fetch rooms based on the selected hotel
-    rooms_list = models.get_rooms_by_hotel(hotel_id)
+    rooms_list = get_rooms_by_hotel(hotel_id)
     
     # Debug print statement to identify rooms found
     print(f"Debug: Found {len(rooms_list)} rooms in hotel ID {hotel_id}")
@@ -64,14 +64,14 @@ def book_hotel(hotels_list, rooms_list):
         return
     
     # Fetch available transportation options
-    transportation_list = models.get_transportation()
+    transportation_list = get_transportation()
     print("\nAvailable Transportation:")
     display_transportation(transportation_list)
     
     transportation_id = int(input("\nEnter the ID of the transportation you want to book: "))
     
     # Book the hotel and room along with the selected transportation
-    models.book_hotel(hotel_id, transportation_id)
+    book_hotel(hotel_id, transportation_id)
     print("Hotel and room booked successfully!")
 
 # Main menu function to navigate through the application
