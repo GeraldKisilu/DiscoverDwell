@@ -66,15 +66,9 @@ def create_tables():
 
 # Function to insert sample data into the hotels table
 def insert_hotels(cursor):
-    cursor.execute('''
+    cursor.executemany('''
     INSERT INTO hotels (name, location, continent, price_per_night, max_stay_duration)
-    VALUES
-    (?, ?, ?, ?, ?),
-    (?, ?, ?, ?, ?),
-    (?, ?, ?, ?, ?),
-    (?, ?, ?, ?, ?),
-    (?, ?, ?, ?, ?),
-    (?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?)
     ''', [
         ('Grand Hotel', 'Romania', 'Europe', 120.0, 30),
         ('Beach Resort', 'Romania', 'Europe', 200.0, 15),
@@ -86,15 +80,9 @@ def insert_hotels(cursor):
 
 # Function to insert sample data into the rooms table
 def insert_rooms(cursor):
-    cursor.execute('''
+    cursor.executemany('''
     INSERT INTO rooms (hotel_id, room_type, price, availability)
-    VALUES
-    (?, ?, ?, ?),
-    (?, ?, ?, ?),
-    (?, ?, ?, ?),
-    (?, ?, ?, ?),
-    (?, ?, ?, ?),
-    (?, ?, ?, ?)
+    VALUES (?, ?, ?, ?)
     ''', [
         (1, 'Single', 50.0, 5),
         (1, 'Double', 75.0, 3),
@@ -106,11 +94,9 @@ def insert_rooms(cursor):
 
 # Function to insert sample data into the transportation table
 def insert_transportation(cursor):
-    cursor.execute('''
+    cursor.executemany('''
     INSERT INTO transportation (name, description)
-    VALUES
-    (?, ?),
-    (?, ?)
+    VALUES (?, ?)
     ''', [
         ('Taxi', 'Comfortable and quick'),
         ('Bus', 'Economical and slow')
